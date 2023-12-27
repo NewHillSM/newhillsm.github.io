@@ -1,230 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Hill Strategic Management Ltd</title>
 
-    <!-- Bootstrap -->
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-    <!-- Icons -->
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- contact form js script -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init("bz1nOiGr8WduhQ8Qb");
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = (Math.random() * 100000) | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm("service_7qrbx1a", "newhill_form", this).then(
+              function () {
+                console.log("SUCCESS!");
+              },
+              function (error) {
+                console.log("FAILED...", error);
+              }
+            );
+          });
+        let output = document.getElementById("output");
+        const formToReset = document.getElementById("contact-form");
+        formToReset.addEventListener("submit", (e) => {
+          e.preventDefault();
+          formToReset.reset();
+          output.innerHTML = "";
+          output.innerHTML += "Message has been sent.";
+        });
+      };
+    </script>
+    <!-- ---------------------- -->
 
-    <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+    <!-- css ssstylesheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
-  <body class="home">
+  <body>
+    <div class="bg">
+      <div class="bg-img"></div>
+    </div>
 
-    <header id="header">
-      <div id="head" class="parallax" parallax-speed="2">
-        <h1 id="logo" class="text-center">
-          <span class="title">New Hill Strategic Management Ltd</span>
-        </h1>
+    <div id="h1">
+      <h1 class="line-alice">New Hill Strategic Management Ltd</h1>
+      <p>
+        You've reached New Hill, climb on top to surpass your expectations. AI
+        Powered Marketing Platform.
+      </p>
+    </div>
+
+    <header class="nav-bar">
+      <div class="logo">
+        <img
+          src="https://new-hill.net/wp-content/uploads/2023/01/cropped-NewHill-logo-transparentBG-100x66.png"
+          alt="new hill logo"
+          srcset=""
+        />
       </div>
-
-      <nav class="navbar navbar-default navbar-sticky">
-        <div class="container-fluid">
-
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          </div>
-
-          <div class="navbar-collapse collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="/">Welcome</a></li>
-              </li>
-            </ul>
-
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
+      <ul class="menu">
+        <li class="menu-item services"><a href="#services">Services</a></li>
+        <li class="menu-item about"><a href="#about">About</a></li>
+        <li class="menu-item login"><a href="./login.html">Login</a></li>
+        <li class="menu-item contact"><a href="#contact">Contact</a></li>
+      </ul>
     </header>
 
-    <main id="main">
+    <div class="cta-banner">
+      <p>
+        Unleash Your Business's Full Potential – Embrace AI-Powered Marketing
+        with Us Today!
+      </p>
+      <a href="#contact">CONTACT</a>
+    </div>
 
-      <div class="container">
+    <!-- SERVICES SECTION -->
+    <section id="services">
+      <div>
+        <img
+          src="./assets/images/services_1.png"
+          alt="Abstract representation of"
+        />
+        <div>
+          <h3>AI-Powered Market Analysis</h3>
+          <p>
+            Delve deep into market trends and consumer behavior with our
+            advanced AI-driven analytics. Our service offers precise insights
+            and data-driven strategies to help you understand and engage your
+            audience effectively.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>Targeted Campaign Management</h3>
+          <p>
+            Harness the power of AI to manage and optimize your marketing
+            campaigns. Our platform enables you to design, execute, and adjust
+            campaigns that resonate with your target audience, ensuring higher
+            engagement and conversions.
+          </p>
+        </div>
+        <img
+          src="./assets/images/services_2.png"
+          alt="Abstract representation of"
+        />
+      </div>
+      <div>
+        <img
+          src="./assets/images/services_3.png"
+          alt="Abstract representation of"
+        />
+        <div>
+          <h3>Data Management Solutions</h3>
+          <p>
+            Efficiently organize and utilize your data with our comprehensive
+            data management services. We provide secure and scalable solutions
+            that empower you to make informed decisions and personalize your
+            marketing efforts.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>Strategic Content Optimization</h3>
+          <p>
+            Elevate your content strategy with AI-assisted content optimization.
+            Our tools analyze consumer preferences and trends, allowing you to
+            create content that is not only relevant and engaging but also
+            boosts your SEO and online presence.
+          </p>
+        </div>
+        <img
+          src="./assets/images/services_4.png"
+          alt="Abstract representation of"
+        />
+      </div>
+    </section>
 
-        <div class="row section topspace">
-          <div class="col-md-12"><p>We are a dynamic team of internet marketing veterans. We're building cutting edge applications to deliver measurable results.</p>
-            <p>Like all business communication, email delivery is more than just a simple handshake. <br>The initial greeting should be accompanied by understanding your prospects or clients, adhering to the rules of doing business properly and ethically and communicating what you need when you need it. <br>We enable you to conduct effective email communication for both retention-based and marketing campaigns.</p>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div>
+        <h2>
+          Welcome to New Hill Strategic Management Ltd. – where your journey to
+          the summit of success begins.
+        </h2>
+        <p>
+          Our AI-powered marketing platform is purpose-built to deliver
+          on-demand experiences that resonate deeply with consumers. At New
+          Hill, we don't just meet expectations; we're dedicated to surpassing
+          them. Our team of experts leverages cutting-edge technology to
+          generate tangible results, crafting strategies that are as unique as
+          the businesses we serve. Join us at New Hill, and together, let's
+          climb to new heights in the dynamic world of strategic management.
+        </p>
+      </div>
+    </section>
 
+    <!-- INFO SECTION --------------------------------------------------------->
+    <section id="info">
+      <div>
+        <img
+          src="./assets/images/mission_statement.png"
+          alt="Abstract representation of digital marketing and technology"
+        />
+        <div>
+          <h3>Mission Statement</h3>
+          <p>
+            Our goal is to guide businesses in attaining their marketing
+            ambitions by providing them with essential resources, insightful
+            data, and professional knowledge necessary for success in the
+            contemporary digital environment. We aim to offer our customers
+            inventive and impactful strategies that yield genuine outcomes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <h3>Products/Features</h3>
+          <p>
+            Our marketing platform presents a variety of products and
+            capabilities tailored to assist businesses in connecting with their
+            desired audience and fulfilling their marketing objectives. Our
+            solutions, infused with AI, encompass targeted promotions,
+            comprehensive data management, and campaign orchestration, all
+            meticulously crafted to enhance customer engagement and boost
+            conversions.
+          </p>
+        </div>
+        <img
+          src="./assets/images/products_features.png"
+          alt="Abstract representation of products/features."
+        />
+      </div>
+    </section>
+    <!-- ---------------------------------------------------------------------- -->
+
+    <!-- CONTACT SECTION ------------------------->
+
+    <section id="contact">
+      <form id="contact-form" class="contact-form">
+        <input type="hidden" name="contact_number" />
+        <h2>Contact Us</h2>
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name:</label>
+          <input type="text" id="company" name="company" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+        </div>
+        <input class="send" type="submit" value="Send" />
+      </form>
+      <p id="output"></p>
+    </section>
+    <!-- <script>
+      let output = document.getElementById("output");
+      const formToReset = document.getElementById("contact-form");
+      formToReset.addEventListener("submit", (e) => {
+        e.preventDefault();
+        formToReset.reset();
+        output.innerHTML = "";
+        output.innerHTML += "Message has been sent.";
+      });
+    </script> -->
+
+    <!-- -------------------------------------- -->
+
+    <footer>
+      <div class="contact-links">
+        <div class="contact-us">
+          <div><h3>Contact:</h3></div>
+          <div>+44 800 471 4972</div>
+          <div>20-22 Wenlock Road</div>
+          <div>London</div>
+          <div>N1 7GU</div>
+          <div>England</div>
+        </div>
+        <div class="links">
+          <div><a href="#services">services</a></div>
+          <div><a href="#about">about us</a></div>
+          <div><a href="./login.html">login</a></div>
+          <div><a href="#contact">contact</a></div>
+          <div><a href="./privacy.html">privacy policy</a></div>
+          <div>
+            <a href="https://new-hill.co.uk/trading-as.html">trading as</a>
           </div>
-        </div> <!-- / section -->
-
-        <div class="row section featured topspace">
-          <h2 class="section-title"><span>Services</span></h2>
-          <div class="row">
-            <div class="col-sm-6 col-md-3">
-              <h3 class="text-center">list management</h3>
-
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <h3 class="text-center">email service provider</h3>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <h3 class="text-center">affiliate solutions and media buying</h3>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <h3 class="text-center">email marketing</h3>
-            </div>
-          </div>
-        </div> <!-- / section -->
-        <div class="row section recentworks topspace">
-
-          <h2 class="section-title"><span>List Management</span></h2>
-
-          <div class="row">
-
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-              </span>Protect Your Core Business</span>
-              <h4></h4>
-              <p></p>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-              <span>Proprietary Technology</span>
-
-              <h4></h4>
-              <p></p>
-            </div>
-
-
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-              <span>Continuous Analysis</span>
-
-              <h4></h4>
-              <p></p>
-            </div>
-
-
-
-          </div>
-
-        </div> <!-- /section -->
-
-
-        <div class="row section clients topspace">
-          <h2 class="section-title"><span>Email Service Provider</span></h2>
-          <div class="row">
-
-
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-              <span>Targeting & Testing</span>
-
-              <h4></h4>
-              <p></p>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-              <span>Compliance & Delivery</span>
-
-              <h4></h4>
-              <p></p>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-              <span>Data Collection & Best Practices</span>
-
-              <h4></h4>
-              <p></p>
-            </div>
-
-          </div>
-        </div> <!-- /section -->
-
-
-
-
-
-
-        <div class="row section topspace">
-          <div class="panel panel-cta"><div class="panel-body">
-              <div class="col-lg-8">
-                <p>Looking to monetise <b>Your Leads</b> or <b>website</b>?
-                </p>
-              </div>
-              <div class="col-lg-4 text-right">
-                <a href="mailto:info@new-hill.co.uk" class="btn btn-primary btn-lg">CONTACT US</a>
-              </div>
-            </div></div>
-        </div> <!-- /section -->
-
-
-      </div>	<!-- /container -->
-
-    </main>
-
-    <footer id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 widget">
-            <h3 class="widget-title">Contact</h3>
-            <div class="widget-body">
-              <p>+44 800 471 4972<br>
-              <a href="mailto:info@new-hill.co.uk">info@new-hill.co.uk</a><br>
-              <br>20-22 Wenlock Road
-              <br>London N1 7GU
-              <br>United Kingdom
-            </div>
-          </div>
-          <!--
-            <div class="col-md-3 widget">
-            <h3 class="widget-title">Follow me</h3>
-            <div class="widget-body">
-            <p class="follow-me-icons">
-            <a href=""><i class="fa fa-twitter fa-2"></i></a>
-            <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-            <a href=""><i class="fa fa-github fa-2"></i></a>
-            <a href=""><i class="fa fa-facebook fa-2"></i></a>
-            </p>
-            </div>
-            </div>
-          -->
-          <div class="col-md-3 widget">
-            <h3 class="widget-title">INFO</h3>
-            <div class="widget-body">
-              <p><a href="/privacy-policy.html">Privacy Policy</a></p>
-              <p><a href="/trading-as.html">Trading as</a></p>
-              </div>
-          </div>
-
-
-
-        </div> <!-- /row of widgets -->
+        </div>
+      </div>
+      <div>
+        <p class="copyright">
+          Copyright ©2023 New Hill Strategic Management Ltd
+        </p>
       </div>
     </footer>
-
-    <footer id="underfooter">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-6 widget">
-            <div class="widget-body">
-              <p>20-22 Wenlock Road, London, England, N1 7GU</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 widget">
-            <div class="widget-body">
-              <p class="text-right">
-              Copyright &copy; 2022 New Hill Strategic Management Ltd<br>
-
-            </div>
-          </div>
-
-        </div> <!-- /row of widgets -->
-      </div>
-    </footer>
-
-
-
-    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="assets/js/template.js"></script>
   </body>
 </html>
