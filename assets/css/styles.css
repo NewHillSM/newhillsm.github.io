@@ -67,6 +67,10 @@ p {
   margin: 20px 0;
 }
 
+.logo img {
+  width: 100px;
+}
+
 
 /* NAV BAR--------------------------------- */
 .nav-bar {
@@ -153,7 +157,7 @@ p {
   .logo {
     margin: auto;
   }
-
+ 
   .nav-bar ul {
     gap: 20px;
   }
